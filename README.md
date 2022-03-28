@@ -94,7 +94,7 @@ server {
 
 }
 ```
-cmdbApi画图依赖 [chart](https://github.com/annProg/chart)接口，此接口用于将dot源码转换为图片
+cmdbApi drawing dependencies [chart](https://github.com/annProg/chart)Interface, this interface is used to convert dot source code to image 
 
 ```
 server {
@@ -115,7 +115,7 @@ server {
 
 }
 ```
-在cmdb配置文件里做反向代理
+Do reverse proxy in cmdb configuration file
 
 ```
 upstream graphviz-api {

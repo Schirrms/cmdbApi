@@ -1,31 +1,31 @@
-# iTop API封装
+# iTop API wrapper
 
-二次封装iTop API便于调用
+Secondary encapsulation of iTop API is easy to call
 
-数据模型使用 https://github.com/annProg/itop-extensions
+iData model using https://github.com/annProg/itop-extensions
 
-## 参数说明
+## Parameter Description
 
-| 参数 | 说明 |
+| Parameters | Description |
 | ---- | ---- |
-|type | ip,app,server,url,domain,default等 (可以在config.php中定义config['map']来映射类型和对应的iTop类) |
-|value |多个值用半角逗号分隔 |
-|rankdir |dot图形方向, LR或者TB，默认TB |
-|depth | relation深度,默认app为1, ip, default等为3 |
-|direction | 关联方向，up(依赖),down(影响),both(依赖和影响),默认为down |
-|show |控制relation显示的iTop类，逗号分隔|
-|hide |控制relation隐藏的iTop类，逗号分隔|
-|filter |控制objects显示的类型,逗号分隔|
+|type |ip,app,server,url,domain,default,etc (iyou can define config['map'] in config.php to map the type and the corresponding iTop class) |
+|value |Multiple values are separated by commas |
+|rankdir |dot graphics direction, LR or TB，default TB |
+|depth |relation depth, the default app is 1, ip, default,etc. are 3 |
+|direction |Association direction, up (dependency), down (influence), both (dependency and influence), the default is down |
+|show |The iTop class that controls the display of relation, comma-separated |
+|hide |The iTop class that controls relation hiding, comma-separated |
+|filter |Controls the type of objects displayed, comma-separated |
 
-## 示例
+## Example
 
-使用以下参数调用
+Called with the following parameters
 
 ```
 public.php?type=ip&value=10.0.0.2&filter=Server&show=Server,Cluster,Rack,ApplicationSolution&direction=both&depth=2
 ```
 
-查询`IP`为`10.0.0.2`的服务器的关联关系，并且objects只显示`Server`类，relations类显示`Server,Cluster,Rack,ApplicationSolution&direction`,并且同时显示此服务器的上下游关联，关联深度只显示2级，返回类似如下结果
+Query the association relationship of the server whose `IP` is `10.0.0.2`, and objects only display the `Server` class, the relations class displays `Server, Cluster, Rack, ApplicationSolution&direction`, and also display the upstream and downstream associations of this server, associations The depth is only displayed at level 2, and the result is similar to the following 
 
 ```
 {
@@ -67,13 +67,13 @@ public.php?type=ip&value=10.0.0.2&filter=Server&show=Server,Cluster,Rack,Applica
 }
 ```
 
-图片显示如下
+The picture shows the following
 
 ![](preview/preview.png)
 
-## 部署方式建议
+## Deployment method recommendations
 
-cmdbApi监听本地端口
+cmdbApi listens on local port 
 
 ```
 server {
